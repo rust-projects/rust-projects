@@ -7,23 +7,20 @@ crate_url = "https://crates.io/..."
 name = ""
 #set this to true if you are manually specifying the name.
 name_manually_specified=false
+
+[development]
 #valid options:
-#  lots of new development
-#  new development
-#  almost all maintenance
-development_remaining="unspecified"
+#  unspecified | mostly_new_development | new_development | maintenance
+dev_remaining="unspecified"
 #valid options:
-#  unspecified
-#  no
-#  specially-skilled only
-#  yes
-#  adoption
-#  abandoned
-looking_for_devs="unspecified"
+#  unspecified | no | skilled_only | yes | adoption | abandoned
+devs_wanted="unspecified"
 # what are the primary languages collaborators use to collaborate?
 # provide up to three in order of most used to least used.
 # format the list as a comma separated list of ISO 693-3 codes
-development_languages = "eng,rus"
+# if this is not provided it defaults to "unspecified"
+dev_langs = "eng,rus"
+
 # the SPDX license code for your projects license
 # there's no need to provide this if:
 #  - your project is using crates.io and has its license specified there.
@@ -31,6 +28,8 @@ development_languages = "eng,rus"
 #     - it is a very common license
 #     - your project is hosted on github and github recognizes the license.
 license="Apache-2.0"
+# if this is set to "skip" the values in this toml will not be manually scraped for
+# updates.
 
 # rust-projects will currently try to retrieve your projects description in this order
 #  - if there is a github description use that
