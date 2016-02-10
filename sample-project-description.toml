@@ -1,2 +1,44 @@
-repo = "https://github.com/someRustOrg/SomeRustProject"
-crate = "https://crates.io/..."
+
+[core]
+#if you don't have a toml provided for your project already, you can just copy this to project_list/<your project name>.toml
+# and then edit accordingly.
+repo_url = "https://github.com/<your org or user name>/<your repo name>"
+crate_url = "https://crates.io/..."
+name = ""
+#set this to true if you are manually specifying the name.
+name_manually_specified=false
+#valid options:
+#  lots of new development
+#  new development
+#  almost all maintenance
+development_remaining="unspecified"
+#valid options:
+#  unspecified
+#  no
+#  specially-skilled only
+#  yes
+#  adoption
+#  abandoned
+looking_for_devs="unspecified"
+# what are the primary languages collaborators use to collaborate?
+# provide up to three in order of most used to least used.
+# format the list as a comma separated list of ISO 693-3 codes
+development_languages = "eng,rus"
+# the SPDX license code for your projects license
+# there's no need to provide this if:
+#  - your project is using crates.io and has its license specified there.
+#  - your project has a LICENSE file in its root directory and
+#     - it is a very common license
+#     - your project is hosted on github and github recognizes the license.
+license="Apache-2.0"
+
+# rust-projects will currently try to retrieve your projects description in this order
+#  - if there is a github description use that
+#  - if there is a crates.io description use that.
+# if you'd like to specify a description or specify a particular one of these descriptions, 
+# please fill it in below using the 693-3 language code. If you use the 'default' key
+# that will be applied to all languages (and override any github or crates.io description)
+[description]
+default="a great project with which to do great things"
+rus="..."
+
