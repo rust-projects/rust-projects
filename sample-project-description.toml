@@ -48,4 +48,4 @@ rus="..."
 # updates.
 last_scraped=""
 # set this to true if your project is temporarily disabled
-on_hiatus=False
+on_hiatus=false
