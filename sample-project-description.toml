@@ -7,20 +7,6 @@ crate_url = "https://crates.io/..."
 name = ""
 #set this to true if you are manually specifying the name.
 name_manually_specified=false
-
-[development]
-#valid options:
-#  unspecified | mostly_new_development | new_development | maintenance
-dev_remaining="unspecified"
-#valid options:
-#  unspecified | no | skilled_only | yes | adoption | abandoned
-devs_wanted="unspecified"
-# what are the primary languages collaborators use to collaborate?
-# provide up to three in order of most used to least used.
-# format the list as a comma separated list of ISO 693-3 codes
-# if this is not provided it defaults to "unspecified"
-dev_langs = "eng,rus"
-
 # the SPDX license code for your projects license
 # there's no need to provide this if:
 #  - your project is using crates.io and has its license specified there.
@@ -28,8 +14,24 @@ dev_langs = "eng,rus"
 #     - it is a very common license
 #     - your project is hosted on github and github recognizes the license.
 license="Apache-2.0"
-# if this is set to "skip" the values in this toml will not be manually scraped for
-# updates.
+
+[development]
+#valid options:
+#  unspecified | mostly_new_development | new_development | maintenance
+dev_remaining="unspecified"
+#valid options:
+# unspecified | no | skilled_only | yes | adoption | abandoned | assumed_abandoned
+# defaults to unspecified
+# 'unspecified' and 'assumed_abandoned' can be set by any outsider.
+# if < 2 commits in repo in last three months, defaults to assumed_abandoned
+# assumed_abandoned status is taken away if there have been > 5 commits in last month.
+devs_wanted="unspecified"
+devs_wanted_last_change="2016-02"
+# what are the primary languages collaborators use to collaborate?
+# provide up to three in order of most used to least used.
+# format the list as a comma separated list of ISO 693-3 codes
+# if this is not provided it defaults to "unspecified"
+dev_langs = "eng,rus"
 
 # rust-projects will currently try to retrieve your projects description in this order
 #  - if there is a github description use that
@@ -41,3 +43,9 @@ license="Apache-2.0"
 default="a great project with which to do great things"
 rus="..."
 
+[config]
+# if this is set to "skip" the values in this toml will not be manually scraped for
+# updates.
+last_scraped=""
+# set this to true if your project is temporarily disabled
+on_hiatus=False
