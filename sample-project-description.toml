@@ -14,6 +14,8 @@ name_manually_specified=false
 #     - it is a very common license
 #     - your project is hosted on github and github recognizes the license.
 license="Apache-2.0"
+# valid values: binaries | libraries | binaries_and_libraries
+products = "binaries"
 
 [development]
 #valid options:
@@ -42,6 +44,10 @@ dev_langs = "eng,rus"
 [description]
 default="a great project with which to do great things"
 rus="..."
+
+# provide up to three tags, comma separated, for your project
+[tags]
+default="desktop,weather,widget"
 
 [config]
 # if this is set to "skip" the values in this toml will not be manually scraped for
